@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="DirectiveApp">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+    <!--CUSTOM MESSAGE DIRECTIVE-->
+    <h1>EXAMPLE 1 - Custom Message Directive</h1>
+    <custom-message></custom-message>
+
+    <br />
+    <br />
+
+    <h1>EXAMPLE 2 - Like Button Directive</h1>
+    <like-button></like-button>
+
+    <br />
+    <br />
+
+    <h1>EXAMPLE 3 - Scope FALSE Directive</h1>
+
+    <div ng-controller="mainController">
+        Controller: <input type="text" ng-model="dataFromParent" style="border:1px solid green" />
+        <br />
+        Scope False Directive: <scope-false-directive></scope-false-directive>
+    </div>
+
+    <br />
+    <br />
+
+    <h1>EXAMPLE 4 - Scope TRUE Directive</h1>
+
+    <div ng-controller="secondController">
+        Controller: <input type="text" ng-model="dataFromParent" style="border:1px solid green" />
+        <br />
+        Scope True Directive: <scope-true-directive></scope-true-directive>
+    </div>
+
+    <br />
+    <br />
+
+    <h1>EXAMPLE 5 - Isolated Scope Directive</h1>
+
+    <div ng-controller="thirdController">
+
+        <scope-isolated-directive one-way-bind-data="{{ dataFromParent}}" two-way-bind-data="dataFromParent" method-bind="changeValue()"></scope-isolated-directive>
+        <br />
+        Controller dataFromParent Property Value: <span><b>{{dataFromParent}}</b></span>
+    </div>
+
+    <br />
+    <br />
+
+    <h1>EXAMPLE 6 - Draggable Directive using Controller</h1>
+
+    <div ng-controller="draggableExampleController">
+
+        <draggable-list items="itemsdata" />
+
+    </div>
+
+    <br />
+    <br />
+
+    <h1>EXAMPLE 7 - Accordion Directive using Transclusion </h1>
+
+    <accordion>
+        <accordion-item title="Element 1">Data 1</accordion-item>
+        <accordion-item title="Element 2">Data 2</accordion-item>
+        <accordion-item title="Element 3">Data 3</accordion-item>
+    </accordion>
+
+    <br />
+    <br />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="CustomMessageDirective.js"></script>
+    <script src="LikeButtonDirective.js"></script>
+    <script src="ScopeFalseDirective.js"></script>
+    <script src="ScopeTrueDirective.js"></script>
+    <script src="IsolatedScopeDirective.js"></script>
+    <script src="DraggableDirective/DraggableExampleController.js"></script>
+    <script src="DraggableDirective/DraggableListDirective.js"></script>
+    <script src="DraggableDirective/DraggableItemDirective.js"></script>
+    <script src="TransclusionDirective/AccordionParentDirective.js"></script>
+    <script src="TransclusionDirective/AccordionChildDirective.js"></script>
+</body>
+</html>
